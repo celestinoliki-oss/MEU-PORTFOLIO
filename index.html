@@ -1,0 +1,571 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfólio Profissional</title>
+
+    <style>
+        :root {
+            --azul: #0b1730;
+            --azul-claro: #142746;
+            --dourado: #d6b568;
+            --fundo: #f3f5f9;
+            --branco: #ffffff;
+            --texto: #263247;
+            --cinzento: #687386;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--fundo);
+            color: var(--texto);
+            line-height: 1.7;
+        }
+
+        /* MENU */
+
+        nav {
+            background: var(--azul);
+            padding: 16px 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--dourado);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            color: var(--dourado);
+        }
+
+        /* CABEÇALHO */
+
+        header {
+            background:
+                radial-gradient(
+                    circle at top right,
+                    #20385d 0%,
+                    var(--azul) 55%
+                );
+            color: white;
+            text-align: center;
+            padding: 75px 20px 85px;
+        }
+
+        .foto-perfil {
+            width: 155px;
+            height: 155px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--dourado);
+            margin-bottom: 22px;
+        }
+
+        .etiqueta {
+            color: var(--dourado);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        header h1 {
+            font-size: clamp(30px, 5vw, 46px);
+            line-height: 1.2;
+            margin: 12px 0;
+        }
+
+        header p {
+            color: #d9e0ec;
+            max-width: 650px;
+            margin: 12px auto 25px;
+        }
+
+        .botao {
+            display: inline-block;
+            background: var(--dourado);
+            color: var(--azul);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 22px;
+            border-radius: 6px;
+            margin: 6px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .botao:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .botao-secundario {
+            background: transparent;
+            border: 1px solid var(--dourado);
+            color: white;
+        }
+
+        /* CONTEÚDO */
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: 35px auto;
+            scroll-margin-top: 90px;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .titulo-secao h2 {
+            color: var(--azul);
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .linha-dourada {
+            width: 55px;
+            height: 4px;
+            background: var(--dourado);
+            margin: 12px auto;
+            border-radius: 5px;
+        }
+
+        /* CARTÕES */
+
+        .cartao {
+            background: var(--branco);
+            border: 1px solid #e5e9f0;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 8px 24px rgba(11, 23, 48, 0.06);
+        }
+
+        .cartao h3 {
+            color: var(--azul);
+            margin-top: 0;
+        }
+
+        .texto-suave {
+            color: var(--cinzento);
+        }
+
+        /* EXPERIÊNCIA */
+
+        .experiencias {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .experiencia {
+            border-top: 4px solid var(--dourado);
+        }
+
+        .experiencia h3 {
+            margin-bottom: 5px;
+        }
+
+        .empresa {
+            color: #8b6b2c;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 7px;
+        }
+
+        li::marker {
+            color: #b89448;
+        }
+
+        /* FORMAÇÃO */
+
+        .formacao {
+            border-left: 4px solid var(--dourado);
+        }
+
+        /* COMPETÊNCIAS */
+
+        .competencias {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .competencia {
+            background: white;
+            border: 1px solid #e5e9f0;
+            border-radius: 10px;
+            padding: 20px 15px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 5px 16px rgba(11, 23, 48, 0.04);
+        }
+
+        .competencia::before {
+            content: "";
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: var(--dourado);
+            margin: 0 auto 12px;
+        }
+
+        /* CONTACTO */
+
+        .contacto {
+            background: var(--azul);
+            color: white;
+            text-align: center;
+            padding: 40px 25px;
+            border-radius: 14px;
+        }
+
+        .contacto h2 {
+            color: white;
+        }
+
+        .contacto p {
+            color: #d9e0ec;
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            background: #071020;
+            color: #d9e0ec;
+            text-align: center;
+            padding: 22px;
+            font-size: 13px;
+            margin-top: 45px;
+        }
+
+        /* TELEMÓVEIS */
+
+        @media (max-width: 700px) {
+            nav {
+                gap: 10px 15px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            header {
+                padding: 55px 18px 65px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            .experiencias {
+                grid-template-columns: 1fr;
+            }
+
+            .competencias {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .cartao {
+                padding: 22px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .competencias {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ACESSIBILIDADE */
+
+        a:focus-visible {
+            outline: 3px solid var(--dourado);
+            outline-offset: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <nav aria-label="Menu principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#formacao">Formação</a>
+        <a href="#competencias">Competências</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- CABEÇALHO -->
+
+    <header id="inicio">
+
+        <img
+            src="foto.jpg"
+            alt="Fotografia profissional"
+            class="foto-perfil"
+        >
+
+        <div class="etiqueta">Portfólio profissional</div>
+
+        <h1>Celestino Kachamiko Katola Likissi</h1>
+
+        <p>
+            Técnico de Faturação | Operador de Informática
+        </p>
+
+        <p>
+            Experiência em processos administrativos, faturação,
+            ferramentas informáticas e atendimento a clientes.
+        </p>
+
+        <a class="botao" href="#experiencia">
+            Ver experiência
+        </a>
+
+        <a class="botao botao-secundario" href="#contacto">
+            Entrar em contacto
+        </a>
+
+    </header>
+
+    <main>
+
+        <!-- SOBRE MIM -->
+
+        <section id="sobre">
+
+            <div class="titulo-secao">
+                <h2>Sobre Mim</h2>
+                <div class="linha-dourada"></div>
+            </div>
+
+            <div class="cartao">
+                <p>
+                    Sou profissional com 10 anos de experiência na área
+                    de Operação de Informática. Atualmente, exerço a
+                    função de Técnico de Faturação na
+                    TWEYIGHIDA COMERCIAL, LDA.
+                </p>
+
+                <p>
+                    Tenho experiência na emissão de documentos de
+                    faturação, controlo de pagamentos, dívidas e
+                    cobranças, elaboração de relatórios, controlo de
+                    stock e atendimento a clientes.
+                </p>
+
+                <p>
+                    Utilizo ferramentas do Microsoft Office, incluindo
+                    Excel, Word e PowerPoint, e tenho experiência na
+                    edição e digitalização de documentos.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- EXPERIÊNCIA -->
+
+        <section id="experiencia">
+
+            <div class="titulo-secao">
+                <h2>Experiência Profissional</h2>
+                <div class="linha-dourada"></div>
+            </div>
+
+            <div class="experiencias">
+
+                <article class="cartao experiencia">
+
+                    <h3>Técnico de Faturação</h3>
+
+                    <p class="empresa">
+                        TWEYIGHIDA COMERCIAL, LDA.
+                    </p>
+
+                    <p class="texto-suave">
+                        Atividades de faturação, controlo administrativo
+                        e acompanhamento das operações comerciais.
+                    </p>
+
+                    <ul>
+                        <li>Emissão de faturas</li>
+                        <li>Emissão de notas de crédito</li>
+                        <li>Emissão de notas de entrega</li>
+                        <li>Atendimento e apoio a clientes</li>
+                        <li>Controlo de pagamentos</li>
+                        <li>Controlo de funcionários</li>
+                        <li>Controlo de dívidas e cobranças</li>
+                        <li>Utilização do Microsoft Excel</li>
+                        <li>Relatórios mensais e semestrais</li>
+                        <li>Organização de documentos</li>
+                        <li>Controlo de stock</li>
+                    </ul>
+
+                </article>
+
+                <article class="cartao experiencia">
+
+                    <h3>Operador de Informática</h3>
+
+                    <p class="empresa">
+                        Experiência de 10 anos
+                    </p>
+
+                    <p class="texto-suave">
+                        Apoio informático, tratamento de documentos
+                        e atendimento a clientes.
+                    </p>
+
+                    <ul>
+                        <li>Edição e formatação de documentos no Word</li>
+                        <li>Organização e tratamento de dados no Excel</li>
+                        <li>Digitalização de documentos</li>
+                        <li>Criação de apresentações no PowerPoint</li>
+                        <li>Atendimento e apoio a clientes</li>
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- FORMAÇÃO -->
+
+        <section id="formacao">
+
+            <div class="titulo-secao">
+                <h2>Formação</h2>
+                <div class="linha-dourada"></div>
+            </div>
+
+            <div class="cartao formacao">
+
+                <h3>Curso de Informática</h3>
+
+                <p class="texto-suave">
+                    Formação na área de Informática.
+                </p>
+
+                <h3>Ensino Médio — Ciências Humanas</h3>
+
+            </div>
+
+        </section>
+
+        <!-- COMPETÊNCIAS -->
+
+        <section id="competencias">
+
+            <div class="titulo-secao">
+                <h2>Competências Profissionais</h2>
+                <div class="linha-dourada"></div>
+            </div>
+
+            <div class="competencias">
+
+                <div class="competencia">Microsoft Excel</div>
+                <div class="competencia">Microsoft Word</div>
+                <div class="competencia">PowerPoint</div>
+                <div class="competencia">Faturação</div>
+                <div class="competencia">Notas de crédito</div>
+                <div class="competencia">Relatórios</div>
+                <div class="competencia">Dívidas e cobranças</div>
+                <div class="competencia">Controlo de stock</div>
+                <div class="competencia">Atendimento a clientes</div>
+                <div class="competencia">Digitalização</div>
+                <div class="competencia">Organização documental</div>
+                <div class="competencia">Controlo administrativo</div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACTO -->
+
+        <section id="contacto" class="contacto">
+
+            <h2>Vamos entrar em contacto?</h2>
+
+            <p>
+                Estou disponível para oportunidades profissionais
+                e para novos desafios.
+            </p>
+
+            <!-- Substitui os dados de exemplo pelos teus -->
+
+            <a
+                class="botao"
+                href="mailto:celestinoliki@exemplo.com"
+            >
+                Enviar e-mail
+            </a>
+
+            <a
+                class="botao botao-secundario"
+                href="https://www.linkedin.com/in/celestino-likisi"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+            <a
+                class="botao botao-secundario"
+                href="https://wa.me/244925558036"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WhatsApp
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            © 2026 — Portfólio Profissional
+        </p>
+    </footer>
+
+</body>
+</html>
