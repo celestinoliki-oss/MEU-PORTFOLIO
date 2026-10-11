@@ -1,34 +1,32 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfólio Profissional</title>
+    <title>Portfolio Profissional | Celestino Kachamiko Katola Likissi</title>
 
     <style>
         :root {
-            --azul: #0b1730;
-            --azul-claro: #142746;
-            --dourado: #d6b568;
-            --fundo: #f3f5f9;
+            --azul: #071a2b;
+            --azul-claro: #0d2b45;
+            --dourado: #d4af37;
+            --dourado-claro: #f0d477;
+            --fundo: #f4f6f8;
             --branco: #ffffff;
-            --texto: #263247;
-            --cinzento: #687386;
+            --texto: #222222;
+            --cinza: #666666;
         }
 
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px;
         }
 
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background: var(--fundo);
             color: var(--texto);
             line-height: 1.7;
@@ -38,284 +36,347 @@
 
         nav {
             background: var(--azul);
-            padding: 16px 20px;
+            padding: 15px 5%;
             display: flex;
             justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 10px 24px;
+            gap: 10px;
             position: sticky;
             top: 0;
-            z-index: 100;
-            border-bottom: 2px solid var(--dourado);
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
 
         nav a {
-            color: white;
+            color: var(--branco);
             text-decoration: none;
-            font-size: 14px;
             font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.3s;
         }
 
-        nav a:hover,
-        nav a:focus-visible {
-            color: var(--dourado);
+        nav a:hover {
+            color: var(--dourado-claro);
+            background: rgba(255,255,255,0.08);
         }
 
-        /* CABEÇALHO */
+        /* CABECALHO */
 
         header {
-            background:
-                radial-gradient(
-                    circle at top right,
-                    #20385d 0%,
-                    var(--azul) 55%
-                );
+            background: linear-gradient(135deg, var(--azul), var(--azul-claro));
             color: white;
             text-align: center;
-            padding: 75px 20px 85px;
+            padding: 70px 20px;
         }
 
         .foto-perfil {
-            width: 155px;
-            height: 155px;
+            width: 170px;
+            height: 170px;
             object-fit: cover;
             border-radius: 50%;
-            border: 4px solid var(--dourado);
-            margin-bottom: 22px;
-        }
-
-        .etiqueta {
-            color: var(--dourado);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 12px;
-            font-weight: bold;
+            border: 5px solid var(--dourado);
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
         }
 
         header h1 {
-            font-size: clamp(30px, 5vw, 46px);
-            line-height: 1.2;
-            margin: 12px 0;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            color: var(--dourado-claro);
+            font-size: 22px;
+            margin-bottom: 15px;
         }
 
         header p {
-            color: #d9e0ec;
-            max-width: 650px;
-            margin: 12px auto 25px;
+            max-width: 800px;
+            margin: auto;
+            color: #e5e5e5;
         }
 
-        .botao {
-            display: inline-block;
-            background: var(--dourado);
-            color: var(--azul);
-            text-decoration: none;
-            font-weight: bold;
-            padding: 12px 22px;
-            border-radius: 6px;
-            margin: 6px;
-            transition: transform 0.2s, opacity 0.2s;
-        }
-
-        .botao:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
-        }
-
-        .botao-secundario {
-            background: transparent;
-            border: 1px solid var(--dourado);
-            color: white;
-        }
-
-        /* CONTEÚDO */
+        /* CONTEUDO */
 
         main {
-            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
         }
 
         section {
-            max-width: 1000px;
-            margin: 35px auto;
-            scroll-margin-top: 90px;
-        }
-
-        .titulo-secao {
-            text-align: center;
-            margin-bottom: 28px;
-        }
-
-        .titulo-secao h2 {
-            color: var(--azul);
-            font-size: 28px;
-            margin-bottom: 5px;
-        }
-
-        .linha-dourada {
-            width: 55px;
-            height: 4px;
-            background: var(--dourado);
-            margin: 12px auto;
-            border-radius: 5px;
-        }
-
-        /* CARTÕES */
-
-        .cartao {
             background: var(--branco);
-            border: 1px solid #e5e9f0;
+            margin-bottom: 30px;
+            padding: 35px;
             border-radius: 12px;
-            padding: 28px;
-            box-shadow: 0 8px 24px rgba(11, 23, 48, 0.06);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
 
-        .cartao h3 {
+        section h2 {
             color: var(--azul);
-            margin-top: 0;
+            border-left: 5px solid var(--dourado);
+            padding-left: 12px;
+            margin-bottom: 25px;
+            font-size: 27px;
         }
 
-        .texto-suave {
-            color: var(--cinzento);
+        section h3 {
+            color: var(--azul);
+            margin-bottom: 8px;
         }
 
-        /* EXPERIÊNCIA */
+        /* OBJETIVO */
 
-        .experiencias {
+        .objetivo {
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        /* DADOS PESSOAIS */
+
+        .dados-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
         }
+
+        .dado {
+            background: #f7f8fa;
+            padding: 15px;
+            border-left: 4px solid var(--dourado);
+            border-radius: 6px;
+        }
+
+        .dado strong {
+            color: var(--azul);
+        }
+
+        /* EXPERIENCIA */
 
         .experiencia {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f7f8fa;
+            border-radius: 10px;
             border-top: 4px solid var(--dourado);
         }
 
-        .experiencia h3 {
-            margin-bottom: 5px;
+        .experiencia:last-child {
+            margin-bottom: 0;
         }
 
         .empresa {
-            color: #8b6b2c;
+            color: var(--dourado);
             font-weight: bold;
-            margin-top: 0;
+            margin-bottom: 15px;
         }
 
         ul {
-            padding-left: 22px;
+            padding-left: 25px;
         }
 
         li {
             margin-bottom: 7px;
         }
 
-        li::marker {
-            color: #b89448;
-        }
-
-        /* FORMAÇÃO */
-
-        .formacao {
-            border-left: 4px solid var(--dourado);
-        }
-
-        /* COMPETÊNCIAS */
+        /* COMPETENCIAS */
 
         .competencias {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
         }
 
         .competencia {
-            background: white;
-            border: 1px solid #e5e9f0;
+            background: var(--azul);
+            color: white;
+            padding: 20px;
             border-radius: 10px;
-            padding: 20px 15px;
             text-align: center;
-            font-weight: bold;
-            box-shadow: 0 5px 16px rgba(11, 23, 48, 0.04);
+            transition: 0.3s;
         }
 
-        .competencia::before {
-            content: "";
-            display: block;
-            width: 28px;
-            height: 3px;
-            background: var(--dourado);
-            margin: 0 auto 12px;
+        .competencia:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .competencia h3 {
+            color: var(--dourado-claro);
+            margin-bottom: 8px;
+        }
+
+        /* IDIOMAS */
+
+        .idiomas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .idioma {
+            padding: 20px;
+            text-align: center;
+            background: #f7f8fa;
+            border-radius: 10px;
+            border-bottom: 4px solid var(--dourado);
+        }
+
+        .idioma h3 {
+            color: var(--azul);
+        }
+
+        /* FORMACAO */
+
+        .formacao-item {
+            padding: 20px;
+            background: #f7f8fa;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--dourado);
+            border-radius: 6px;
         }
 
         /* CONTACTO */
 
         .contacto {
-            background: var(--azul);
-            color: white;
             text-align: center;
-            padding: 40px 25px;
-            border-radius: 14px;
-        }
-
-        .contacto h2 {
-            color: white;
         }
 
         .contacto p {
-            color: #d9e0ec;
+            margin-bottom: 20px;
         }
 
-        /* RODAPÉ */
+        .botoes-contacto {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .email {
+            background: var(--azul);
+            color: white;
+        }
+
+        .linkedin {
+            background: #0a66c2;
+            color: white;
+        }
+
+        .whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        .botao:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        /* RODAPE */
 
         footer {
-            background: #071020;
-            color: #d9e0ec;
+            background: var(--azul);
+            color: white;
             text-align: center;
-            padding: 22px;
-            font-size: 13px;
-            margin-top: 45px;
+            padding: 25px;
+            margin-top: 30px;
         }
 
-        /* TELEMÓVEIS */
+        footer span {
+            color: var(--dourado-claro);
+        }
 
-        @media (max-width: 700px) {
+        /* RESPONSIVO */
+
+        @media (max-width: 800px) {
+
+            header h1 {
+                font-size: 29px;
+            }
+
+            header h2 {
+                font-size: 19px;
+            }
+
+            .competencias,
+            .idiomas {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .dados-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
             nav {
-                gap: 10px 15px;
-            }
-
-            nav a {
-                font-size: 13px;
-            }
-
-            header {
-                padding: 55px 18px 65px;
-            }
-
-            main {
                 padding: 10px;
             }
 
-            .experiencias {
+            nav a {
+                font-size: 14px;
+                padding: 6px 8px;
+            }
+
+            header {
+                padding: 50px 15px;
+            }
+
+            .foto-perfil {
+                width: 140px;
+                height: 140px;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            header h2 {
+                font-size: 17px;
+            }
+
+            main {
+                padding: 20px 12px;
+            }
+
+            section {
+                padding: 22px 18px;
+            }
+
+            section h2 {
+                font-size: 23px;
+            }
+
+            .competencias,
+            .idiomas {
                 grid-template-columns: 1fr;
             }
 
-            .competencias {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+            .objetivo {
+                font-size: 16px;
+                text-align: left;
             }
 
-            .cartao {
-                padding: 22px;
+            .botoes-contacto {
+                flex-direction: column;
             }
-        }
 
-        @media (max-width: 380px) {
-            .competencias {
-                grid-template-columns: 1fr;
+            .botao {
+                width: 100%;
             }
-        }
-
-        /* ACESSIBILIDADE */
-
-        a:focus-visible {
-            outline: 3px solid var(--dourado);
-            outline-offset: 4px;
         }
     </style>
 </head>
@@ -324,247 +385,398 @@
 
     <!-- MENU -->
 
-    <nav aria-label="Menu principal">
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre mim</a>
-        <a href="#experiencia">Experiência</a>
-        <a href="#formacao">Formação</a>
-        <a href="#competencias">Competências</a>
+    <nav>
+        <a href="#sobre">Sobre Mim</a>
+        <a href="#objetivo">Objetivo</a>
+        <a href="#dados">Dados</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#eleicoes">Eleicoes</a>
+        <a href="#formacao">Formacao</a>
+        <a href="#competencias">Competencias</a>
+        <a href="#idiomas">Idiomas</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
-    <!-- CABEÇALHO -->
 
-    <header id="inicio">
+    <!-- CABECALHO -->
 
-        <img
-            src="foto.jpg"
-            alt="Fotografia profissional"
-            class="foto-perfil"
-        >
+    <header>
 
-        <div class="etiqueta">Portfólio profissional</div>
+        <img src="foto.jpg"
+             alt="Foto de perfil"
+             class="foto-perfil">
 
         <h1>Celestino Kachamiko Katola Likissi</h1>
 
-        <p>
-            Técnico de Faturação | Operador de Informática
-        </p>
+        <h2>Tecnico de Faturacao | Operador de Informatica</h2>
 
         <p>
-            Experiência em processos administrativos, faturação,
-            ferramentas informáticas e atendimento a clientes.
+            Profissional com experiencia em informatica, faturacao,
+            atendimento ao cliente, organizacao documental,
+            controlo administrativo e gestao de informacao.
         </p>
-
-        <a class="botao" href="#experiencia">
-            Ver experiência
-        </a>
-
-        <a class="botao botao-secundario" href="#contacto">
-            Entrar em contacto
-        </a>
 
     </header>
 
+
     <main>
+
 
         <!-- SOBRE MIM -->
 
         <section id="sobre">
 
-            <div class="titulo-secao">
-                <h2>Sobre Mim</h2>
-                <div class="linha-dourada"></div>
-            </div>
+            <h2>Sobre Mim</h2>
 
-            <div class="cartao">
-                <p>
-                    Sou profissional com 10 anos de experiência na área
-                    de Operação de Informática. Atualmente, exerço a
-                    função de Técnico de Faturação na
-                    TWEYIGHIDA COMERCIAL, LDA.
-                </p>
+            <p>
+                Sou profissional com experiencia de aproximadamente
+                10 anos na area de Operador de Informatica e experiencia
+                atual como Tecnico de Faturacao na
+                <strong>TWEYIGHIDA COMERCIAL, LDA.</strong>
+            </p>
 
-                <p>
-                    Tenho experiência na emissão de documentos de
-                    faturação, controlo de pagamentos, dívidas e
-                    cobranças, elaboração de relatórios, controlo de
-                    stock e atendimento a clientes.
-                </p>
+            <p>
+                Ao longo da minha experiencia profissional desenvolvi
+                competencias em informatica, faturacao, atendimento
+                ao cliente, organizacao documental, elaboracao de
+                relatorios, controlo administrativo e gestao de informacao.
+            </p>
 
-                <p>
-                    Utilizo ferramentas do Microsoft Office, incluindo
-                    Excel, Word e PowerPoint, e tenho experiência na
-                    edição e digitalização de documentos.
-                </p>
+        </section>
+
+
+        <!-- OBJETIVO PROFISSIONAL -->
+
+        <section id="objetivo">
+
+            <h2>Objetivo Profissional</h2>
+
+            <p class="objetivo">
+                Desenvolver a minha carreira profissional, colocando em
+                pratica a experiencia adquirida nas areas de informatica,
+                faturacao, atendimento ao cliente, organizacao documental
+                e gestao de informacao. Pretendo integrar uma organizacao
+                onde possa contribuir com responsabilidade, organizacao,
+                capacidade de aprendizagem e compromisso com os resultados,
+                ao mesmo tempo que continuo a desenvolver as minhas
+                competencias profissionais e tecnicas.
+            </p>
+
+        </section>
+
+
+        <!-- DADOS PESSOAIS -->
+
+        <section id="dados">
+
+            <h2>Dados Pessoais</h2>
+
+            <div class="dados-grid">
+
+                <div class="dado">
+                    <strong>Data de nascimento:</strong><br>
+                    01 de Junho de 1989
+                </div>
+
+                <div class="dado">
+                    <strong>Naturalidade:</strong><br>
+                    Lobito, Provincia de Benguela
+                </div>
+
+                <div class="dado">
+                    <strong>Residencia:</strong><br>
+                    Bocoio, Provincia de Benguela
+                </div>
+
             </div>
 
         </section>
 
-        <!-- EXPERIÊNCIA -->
+
+        <!-- EXPERIENCIA PROFISSIONAL -->
 
         <section id="experiencia">
 
-            <div class="titulo-secao">
-                <h2>Experiência Profissional</h2>
-                <div class="linha-dourada"></div>
+            <h2>Experiencia Profissional</h2>
+
+
+            <!-- TECNICO DE FATURACAO -->
+
+            <div class="experiencia">
+
+                <h3>Tecnico de Faturacao</h3>
+
+                <p class="empresa">
+                    TWEYIGHIDA COMERCIAL, LDA.
+                </p>
+
+                <ul>
+                    <li>Emissao de faturas</li>
+                    <li>Emissao de notas de credito</li>
+                    <li>Emissao de notas de entrega</li>
+                    <li>Atendimento a clientes</li>
+                    <li>Controlo de pagamentos</li>
+                    <li>Controlo de funcionarios</li>
+                    <li>Controlo de dividas e cobrancas</li>
+                    <li>Utilizacao do Microsoft Excel</li>
+                    <li>Elaboracao de relatorios mensais e semestrais</li>
+                    <li>Organizacao de documentos</li>
+                    <li>Controlo de stock</li>
+                </ul>
+
             </div>
 
-            <div class="experiencias">
 
-                <article class="cartao experiencia">
+            <!-- OPERADOR DE INFORMATICA -->
 
-                    <h3>Técnico de Faturação</h3>
+            <div class="experiencia">
 
-                    <p class="empresa">
-                        TWEYIGHIDA COMERCIAL, LDA.
-                    </p>
+                <h3>Operador de Informatica</h3>
 
-                    <p class="texto-suave">
-                        Atividades de faturação, controlo administrativo
-                        e acompanhamento das operações comerciais.
-                    </p>
+                <p class="empresa">
+                    Experiencia profissional de aproximadamente 10 anos
+                </p>
 
-                    <ul>
-                        <li>Emissão de faturas</li>
-                        <li>Emissão de notas de crédito</li>
-                        <li>Emissão de notas de entrega</li>
-                        <li>Atendimento e apoio a clientes</li>
-                        <li>Controlo de pagamentos</li>
-                        <li>Controlo de funcionários</li>
-                        <li>Controlo de dívidas e cobranças</li>
-                        <li>Utilização do Microsoft Excel</li>
-                        <li>Relatórios mensais e semestrais</li>
-                        <li>Organização de documentos</li>
-                        <li>Controlo de stock</li>
-                    </ul>
-
-                </article>
-
-                <article class="cartão experiência">
-
-                    <h3>Operador de Informática</h3>
-
-                    <p class="empresa">
-                        Experiência de 10 anos
-                    </p>
-
-                    <p class="texto-suave">
-                        Apoio informático, tratamento de documentos
-                        e atendimento a clientes.
-                    </p>
-
-                    <ul>
-                        <li>Edição e formatação de documentos no Word</li>
-                        <li>Organização e tratamento de dados no Excel</li>
-                        <li>Digitalização de documentos</li>
-                        <li>Criação de apresentações no PowerPoint</li>
-                        <li>Atendimento e apoio a clientes</li>
-                    </ul>
-
-                </article>
+                <ul>
+                    <li>Edicao e digitalizacao de documentos</li>
+                    <li>Utilizacao do Microsoft Word e Excel</li>
+                    <li>Criacao e edicao de apresentacoes em PowerPoint</li>
+                    <li>Atendimento a clientes</li>
+                    <li>Apoio aos clientes na utilizacao de servicos informaticos</li>
+                </ul>
 
             </div>
 
         </section>
 
-        <!-- FORMAÇÃO -->
+
+        <!-- EXPERIENCIA ELEITORAL -->
+
+        <section id="eleicoes">
+
+            <h2>Experiencia em Processos Eleitorais</h2>
+
+
+            <div class="experiencia">
+
+                <h3>Agente de Informacao ao Eleitor</h3>
+
+                <p class="empresa">
+                    SINFIC — Eleicoes Gerais de 2022
+                </p>
+
+                <p>
+                    Participacao no processo eleitoral como
+                    Agente de Informacao ao Eleitor, contribuindo
+                    para o atendimento e orientacao dos cidadaos
+                    durante as Eleicoes Gerais de 2022.
+                </p>
+
+            </div>
+
+
+            <div class="experiencia">
+
+                <h3>Escrutinador</h3>
+
+                <p class="empresa">
+                    Eleicoes Gerais de 2017
+                </p>
+
+                <p>
+                    Participacao no processo eleitoral como
+                    Escrutinador durante as Eleicoes Gerais de 2017.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FORMACAO -->
 
         <section id="formacao">
 
-            <div class="titulo-secao">
-                <h2>Formação</h2>
-                <div class="linha-dourada"></div>
-            </div>
+            <h2>Formacao Academica</h2>
 
-            <div class="cartao formacao">
+            <div class="formacao-item">
 
-                <h3>Curso de Informática</h3>
+                <h3>Curso de Informatica</h3>
 
-                <p class="texto-suave">
-                    Formação na área de Informática.
+                <p>
+                    Formacao na area de Informatica.
                 </p>
 
-                <h3>Ensino Médio — Ciências Humanas</h3>
+            </div>
+
+
+            <div class="formacao-item">
+
+                <h3>Ensino Medio — Ciencias Humanas</h3>
+
+                <p>
+                    Ensino Medio na area de Ciencias Humanas.
+                </p>
 
             </div>
 
         </section>
 
-        <!-- COMPETÊNCIAS -->
+
+        <!-- COMPETENCIAS -->
 
         <section id="competencias">
 
-            <div class="titulo-secao">
-                <h2>Competências Profissionais</h2>
-                <div class="linha-dourada"></div>
-            </div>
+            <h2>Competencias Profissionais</h2>
 
             <div class="competencias">
 
-                <div class="competencia">Microsoft Excel</div>
-                <div class="competencia">Microsoft Word</div>
-                <div class="competencia">PowerPoint</div>
-                <div class="competencia">Faturação</div>
-                <div class="competencia">Notas de crédito</div>
-                <div class="competencia">Relatórios</div>
-                <div class="competencia">Dívidas e cobranças</div>
-                <div class="competencia">Controlo de stock</div>
-                <div class="competencia">Atendimento a clientes</div>
-                <div class="competencia">Digitalização</div>
-                <div class="competencia">Organização documental</div>
-                <div class="competencia">Controlo administrativo</div>
+                <div class="competencia">
+                    <h3>Microsoft Excel</h3>
+                    <p>Utilizacao profissional e elaboracao de relatorios.</p>
+                </div>
+
+                <div class="competencia">
+                    <h3>Microsoft Word</h3>
+                    <p>Edicao e organizacao de documentos.</p>
+                </div>
+
+                <div class="competencia">
+                    <h3>PowerPoint</h3>
+                    <p>Criacao e edicao de apresentacoes.</p>
+                </div>
+
+                <div class="competencia">
+                    <h3>Faturacao</h3>
+                    <p>Emissao e controlo de documentos de faturacao.</p>
+                </div>
+
+                <div class="competencia">
+                    <h3>Notas de Credito</h3>
+                    <p>Emissao e controlo de notas de credito.</p>
+                </div>
+
+                <div class="competencia">
+                    <h3>Relatorios</h3>
+                    <p>Elaboracao de relatorios mensais e semestrais.</p>
+                </div>
+
+                <div class="competencia">
+                    <h3>Dividas e Cobrancas</h3>
+                    <p>Controlo de pagamentos, dividas e cobrancas.</p>
+                </div>
+
+                <div class="competencia">
+                    <h3>Controlo de Stock</h3>
+                    <p>Acompanhamento e organizacao de stock.</p>
+                </div>
+
+                <div class="competencia">
+                    <h3>Atendimento</h3>
+                    <p>Atendimento e apoio aos clientes.</p>
+                </div>
+
+                <div class="competencia">
+                    <h3>Digitalizcao</h3>
+                    <p>Digitalizacao e organizacao de documentos.</p>
+                </div>
+
+                <div class="competencia">
+                    <h3>Organizacao Documental</h3>
+                    <p>Gestao e organizacao de documentacao.</p>
+                </div>
+
+                <div class="competencia">
+                    <h3>Controlo Administrativo</h3>
+                    <p>Organizacao e acompanhamento de processos.</p>
+                </div>
 
             </div>
 
         </section>
+
+
+        <!-- IDIOMAS -->
+
+        <section id="idiomas">
+
+            <h2>Idiomas</h2>
+
+            <div class="idiomas">
+
+                <div class="idioma">
+                    <h3>Umbundu</h3>
+                    <p>Dominio</p>
+                </div>
+
+                <div class="idioma">
+                    <h3>Lingua Portuguesa</h3>
+                    <p>Dominio</p>
+                </div>
+
+                <div class="idioma">
+                    <h3>Ingles</h3>
+                    <p>Basico</p>
+                </div>
+
+            </div>
+
+        </section>
+
 
         <!-- CONTACTO -->
 
         <section id="contacto" class="contacto">
 
-            <h2>Vamos entrar em contacto?</h2>
+            <h2>Contacto</h2>
 
             <p>
-                Estou disponível para oportunidades profissionais
-                e para novos desafios.
+                Para oportunidades profissionais, colaboracao ou
+                informacoes adicionais, entre em contacto atraves
+                dos canais abaixo.
             </p>
 
-            <!-- Substitui os dados de exemplo pelos teus -->
+            <div class="botoes-contacto">
 
-            <a
-                class="botao"
-                href="mailto:celestinoliki@gmail.com"
-            >
-                Enviar e-mail
-            </a>
+                <a
+                    href="mailto:celestinoliki@gmail.com"
+                    class="botao email">
+                    Email
+                </a>
 
-            <a
-                class="botao botao-secundario"
-                href="https://www.linkedin.com/in/celestino-likisi"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                LinkedIn
-            </a>
+                <a
+                    href="https://www.linkedin.com/in/celestino-likisi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="botao linkedin">
+                    LinkedIn
+                </a>
 
-            <a
-                class="botao botao-secundario"
-                href="https://wa.me/244925558036"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                WhatsApp
-            </a>
+                <a
+                    href="https://wa.me/244925558036"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="botao whatsapp">
+                    WhatsApp
+                </a>
+
+            </div>
 
         </section>
 
+
     </main>
 
+
+    <!-- RODAPE -->
+
     <footer>
+
         <p>
-            © 2026 — Portfólio Profissional
+            © 2026 <span>Celestino Kachamiko Katola Likissi</span>.
+            Todos os direitos reservados.
         </p>
+
     </footer>
 
 </body>
